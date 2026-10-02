@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Accessible 2D Grid Layout & Theme Engine Demonstration">
+    <title>Responsive Grid & Dark Mode Engine</title>
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/layout.css">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to Content</a>
+
+    <header role="banner">
+        <h1>Adaptive Theme & Grid Architecture</h1>
+        <nav aria-label="Main Navigation">
+            <ul>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#analytics">Analytics</a></li>
+            </ul>
+            <button id="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to Dark Theme">
+                <span class="theme-icon" aria-hidden="true">🌓</span>
+                <span class="theme-toggle-text">Dark Theme</span>
+            </button>
+        </nav>
+    </header>
+
+    <main id="main" tabindex="-1">
+        <section aria-labelledby="overview-heading" class="hero-section">
+            <h2 id="overview-heading">Contract-First Responsive Design</h2>
+            <p>Demonstrating high-performance 2D grid layouts, custom CSS tokens, and persistent dark mode engine without layout shifts.</p>
+        </section>
+
+        <section aria-labelledby="grid-heading" class="grid-container">
+            <h2 id="grid-heading" class="grid-title">2D Responsive Grid Cards</h2>
+
+            <article class="card" aria-labelledby="card1-title">
+                <h3 id="card1-title">Design Tokens</h3>
+                <p>All colors are bound to CSS variables. Hex codes are restricted strictly to root variable definitions to allow instant live updates.</p>
+            </article>
+
+            <article class="card" aria-labelledby="card2-title">
+                <h3 id="card2-title">2D CSS Grid</h3>
+                <p>Flexible multi-column layout adapting seamlessly from 375px mobile viewports to desktop displays with zero horizontal scroll.</p>
+            </article>
+
+            <article class="card" aria-labelledby="card3-title">
+                <h3 id="card3-title">WCAG 2.2 AA Contrast</h3>
+                <p>Color combinations paired with contrast ratios exceeding 4.5:1 across both light and dark themes for optimal legibility.</p>
+            </article>
+
+            <article class="card" aria-labelledby="card4-title">
+                <h3 id="card4-title">State Persistence</h3>
+                <p>User theme preference is saved in local storage under the key <code>theme</code> and applied before render to prevent CLS.</p>
+            </article>
+        </section>
+    </main>
+
+    <aside aria-label="Sidebar Insights">
+        <h2>System Performance</h2>
+        <p>Zero CLS (Cumulative Layout Shift) budget maintained. Fast load time on 3G network conditions.</p>
+    </aside>
+
+    <footer role="contentinfo">
+        <p>&copy; 2026 Web Accessibility & Responsive Grid Engine.</p>
+    </footer>
+</body>
+</html>
