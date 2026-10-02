@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Modular Component Architecture Portfolio">
+    <title>Modular Component Architecture - Web Portfolio</title>
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to Content</a>
+
+    <header role="banner">
+        <h1>DevPortfolio</h1>
+        <nav aria-label="Main Navigation">
+            <ul>
+                <li><a href="#hero">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button id="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to Dark Theme">
+                <span class="theme-icon" aria-hidden="true">🌓</span>
+                <span class="theme-toggle-text">Dark Theme</span>
+            </button>
+        </nav>
+    </header>
+
+    <main id="main" tabindex="-1">
+        <!-- 1. Hero Section -->
+        <section id="hero" aria-labelledby="hero-heading" class="hero-component">
+            <figure class="hero-portrait-frame">
+                <img src="assets/portrait.svg" alt="Professional portrait of Senior Full-Stack Engineer" width="300" height="300" class="hero-portrait" loading="eager">
+                <figcaption class="sr-only">Senior Full-Stack Engineer Portrait</figcaption>
+            </figure>
+            <section class="hero-content">
+                <h1 id="hero-heading">Senior Full-Stack Engineer</h1>
+                <p class="hero-pitch">Crafting accessible, high-performance web solutions with modular component architecture, robust design tokens, and zero layout shift.</p>
+            </section>
+        </section>
+
+        <!-- 2. Skills Matrix -->
+        <section id="skills" aria-labelledby="skills-heading" class="skills-component">
+            <h2 id="skills-heading" class="section-title">Skills Matrix</h2>
+            <section class="skills-grid">
+                <article class="skills-category" aria-labelledby="frontend-skills">
+                    <h3 id="frontend-skills">Frontend Engineering</h3>
+                    <ul class="badge-list">
+                        <li><span class="badge">HTML5 Semantics</span></li>
+                        <li><span class="badge">CSS3 / Grid / Tokens</span></li>
+                        <li><span class="badge">JavaScript ESNext</span></li>
+                        <li><span class="badge">WAI-ARIA Accessibility</span></li>
+                    </ul>
+                </article>
+
+                <article class="skills-category" aria-labelledby="backend-skills">
+                    <h3 id="backend-skills">Backend Architecture</h3>
+                    <ul class="badge-list">
+                        <li><span class="badge">Node.js</span></li>
+                        <li><span class="badge">RESTful APIs</span></li>
+                        <li><span class="badge">PostgreSQL</span></li>
+                        <li><span class="badge">State Management</span></li>
+                    </ul>
+                </article>
+
+                <article class="skills-category" aria-labelledby="tools-skills">
+                    <h3 id="tools-skills">Tools & Quality</h3>
+                    <ul class="badge-list">
+                        <li><span class="badge">Git / Atomic Commits</span></li>
+                        <li><span class="badge">Performance Budgeting</span></li>
+                        <li><span class="badge">Lighthouse Audits</span></li>
+                        <li><span class="badge">CI/CD Pipelines</span></li>
+                    </ul>
+                </article>
+            </section>
+        </section>
+
+        <!-- 3. Project Cards -->
+        <section id="projects" aria-labelledby="projects-heading" class="projects-component">
+            <h2 id="projects-heading" class="section-title">Featured Projects</h2>
+            <section class="projects-grid">
+                <article class="project-card" aria-labelledby="proj1-title">
+                    <h3 id="proj1-title">Semantic Landmark Engine</h3>
+                    <p>Strict accessibility framework enforcing 0 div layout contracts and ARIA compliant landmark hierarchies for screen readers.</p>
+                    <ul class="tag-list">
+                        <li><span class="tag">HTML5</span></li>
+                        <li><span class="tag">WAI-ARIA</span></li>
+                        <li><span class="tag">a11y</span></li>
+                    </ul>
+                    <nav class="project-actions" aria-label="Semantic Landmark Engine Links">
+                        <a href="https://github.com" target="_blank" rel="noopener">Live Demo</a>
+                        <a href="https://github.com" target="_blank" rel="noopener">Repository</a>
+                    </nav>
+                </article>
+
+                <article class="project-card" aria-labelledby="proj2-title">
+                    <h3 id="proj2-title">Contract-First CSS Theme Engine</h3>
+                    <p>Design system architecture pairing color tokens with persistent localStorage dark mode engine with zero CLS layout shifts.</p>
+                    <ul class="tag-list">
+                        <li><span class="tag">CSS Grid</span></li>
+                        <li><span class="tag">CSS Variables</span></li>
+                        <li><span class="tag">JavaScript</span></li>
+                    </ul>
+                    <nav class="project-actions" aria-label="CSS Theme Engine Links">
+                        <a href="https://github.com" target="_blank" rel="noopener">Live Demo</a>
+                        <a href="https://github.com" target="_blank" rel="noopener">Repository</a>
+                    </nav>
+                </article>
+
+                <article class="project-card" aria-labelledby="proj3-title">
+                    <h3 id="proj3-title">Modular Component Portfolio</h3>
+                    <p>Scalable, self-contained UI components featuring validated forms, categorized skill matrices, and responsive 2D layouts.</p>
+                    <ul class="tag-list">
+                        <li><span class="tag">ES6 Modules</span></li>
+                        <li><span class="tag">UX / UI</span></li>
+                        <li><span class="tag">WCAG 2.2</span></li>
+                    </ul>
+                    <nav class="project-actions" aria-label="Modular Component Portfolio Links">
+                        <a href="https://github.com" target="_blank" rel="noopener">Live Demo</a>
+                        <a href="https://github.com" target="_blank" rel="noopener">Repository</a>
+                    </nav>
+                </article>
+            </section>
+        </section>
+
+        <!-- 4. Contact Form -->
+        <section id="contact" aria-labelledby="contact-heading" class="contact-component">
+            <h2 id="contact-heading" class="section-title">Get In Touch</h2>
+            <p class="contact-intro">Interested in working together or have a question? Send a message below.</p>
+
+            <form id="contact-form" class="contact-form" novalidate>
+                <p id="form-status" role="status" aria-live="polite" class="form-status"></p>
+
+                <p class="form-group">
+                    <label for="user-name">Full Name <span aria-hidden="true">*</span></label>
+                    <input type="text" id="user-name" name="name" required minlength="2" placeholder="Jane Doe" aria-required="true">
+                    <span id="name-error" class="field-error" aria-live="polite"></span>
+                </p>
+
+                <p class="form-group">
+                    <label for="user-email">Email Address <span aria-hidden="true">*</span></label>
+                    <input type="email" id="user-email" name="email" required placeholder="jane@example.com" aria-required="true">
+                    <span id="email-error" class="field-error" aria-live="polite"></span>
+                </p>
+
+                <p class="form-group">
+                    <label for="user-message">Message <span aria-hidden="true">*</span></label>
+                    <textarea id="user-message" name="message" required minlength="10" rows="5" placeholder="Write your message here..." aria-required="true"></textarea>
+                    <span id="message-error" class="field-error" aria-live="polite"></span>
+                </p>
+
+                <button type="submit" id="submit-btn" class="submit-button">
+                    <span class="btn-text">Send Message</span>
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <p>&copy; 2026 Modular Component Architecture. Built with HTML5, CSS Grid & Vanilla JS.</p>
+    </footer>
+
+    <script src="js/theme.js" defer></script>
+    <script src="js/form.js" defer></script>
+</body>
+</html>
