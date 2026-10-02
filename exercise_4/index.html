@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="4-State Resilient Component Architecture">
+    <title>4-State Resilient Component</title>
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/layout.css">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to Content</a>
+
+    <header role="banner">
+        <h1>4-State Resilient Architecture</h1>
+        <nav aria-label="Main Navigation & Theme Controls">
+            <ul>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#demo">Component Demo</a></li>
+            </ul>
+            <button id="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to Dark Theme">
+                <span class="theme-icon" aria-hidden="true">🌓</span>
+                <span class="theme-toggle-text">Dark Theme</span>
+            </button>
+        </nav>
+    </header>
+
+    <main id="main" tabindex="-1">
+        <section id="overview" aria-labelledby="overview-heading" class="hero-section">
+            <h2 id="overview-heading">Resilient UI State Machine</h2>
+            <p>Handling all 4 explicit UI component states: Loading Skeleton, Live Data, Empty State, and Error State with accessible retry trigger.</p>
+
+            <!-- State Machine Interactive Simulator Controls -->
+            <nav class="state-controls" aria-label="State Machine Switcher">
+                <p class="state-label">State Machine Controls:</p>
+                <button type="button" class="state-btn active" data-target-state="loading">State 1: Loading</button>
+                <button type="button" class="state-btn" data-target-state="live">State 2: Live Data</button>
+                <button type="button" class="state-btn" data-target-state="empty">State 3: Empty</button>
+                <button type="button" class="state-btn" data-target-state="error">State 4: Error</button>
+            </nav>
+        </section>
+
+        <section id="demo" aria-labelledby="demo-heading" class="component-wrapper">
+            <h2 id="demo-heading" class="section-title">Resilient Content Component</h2>
+
+            <!-- 4-State Container -->
+            <section id="state-container" data-state="loading" aria-live="polite">
+
+                <!-- STATE 1: LOADING SKELETON -->
+                <section class="state-view view-loading" aria-label="Content loading">
+                    <h3 class="sr-only">Loading content...</h3>
+                    <section class="skeleton-grid">
+                        <article class="skeleton-card">
+                            <span class="skeleton-box skeleton-badge"></span>
+                            <span class="skeleton-box skeleton-title"></span>
+                            <span class="skeleton-box skeleton-text"></span>
+                            <span class="skeleton-box skeleton-text short"></span>
+                        </article>
+                        <article class="skeleton-card">
+                            <span class="skeleton-box skeleton-badge"></span>
+                            <span class="skeleton-box skeleton-title"></span>
+                            <span class="skeleton-box skeleton-text"></span>
+                            <span class="skeleton-box skeleton-text short"></span>
+                        </article>
+                        <article class="skeleton-card">
+                            <span class="skeleton-box skeleton-badge"></span>
+                            <span class="skeleton-box skeleton-title"></span>
+                            <span class="skeleton-box skeleton-text"></span>
+                            <span class="skeleton-box skeleton-text short"></span>
+                        </article>
+                    </section>
+                </section>
+
+                <!-- STATE 2: LIVE DATA STATE -->
+                <section class="state-view view-live" aria-label="Live data items">
+                    <section class="live-grid">
+                        <article class="live-card" aria-labelledby="live1-title">
+                            <header class="card-meta">
+                                <span class="badge badge-success">Active</span>
+                                <time datetime="2026-10-02">Oct 02, 2026</time>
+                            </header>
+                            <h3 id="live1-title">High-Performance Shimmer Skeleton</h3>
+                            <p>Pure CSS shimmer gradient animation providing seamless loading feedback without layout shifts.</p>
+                            <footer class="card-footer">
+                                <span class="meta-tag">UI Engine</span>
+                                <span class="meta-tag">CSS3</span>
+                            </footer>
+                        </article>
+
+                        <article class="live-card" aria-labelledby="live2-title">
+                            <header class="card-meta">
+                                <span class="badge badge-primary">Featured</span>
+                                <time datetime="2026-10-02">Oct 02, 2026</time>
+                            </header>
+                            <h3 id="live2-title">Flexbox & 2D Grid Layout</h3>
+                            <p>Modular grid structure with metadata badges rendering cleanly across all mobile viewports.</p>
+                            <footer class="card-footer">
+                                <span class="meta-tag">Flexbox</span>
+                                <span class="meta-tag">Grid</span>
+                            </footer>
+                        </article>
+
+                        <article class="live-card" aria-labelledby="live3-title">
+                            <header class="card-meta">
+                                <span class="badge badge-info">Verified</span>
+                                <time datetime="2026-10-02">Oct 02, 2026</time>
+                            </header>
+                            <h3 id="live3-title">Accessible State Machine</h3>
+                            <p>Full ARIA compliance, status announcements, and accessible retry triggers for screen reader navigation.</p>
+                            <footer class="card-footer">
+                                <span class="meta-tag">a11y</span>
+                                <span class="meta-tag">WAI-ARIA</span>
+                            </footer>
+                        </article>
+                    </section>
+                </section>
+
+                <!-- STATE 3: EMPTY STATE -->
+                <section class="state-view view-empty" aria-label="Empty data state">
+                    <article class="empty-box">
+                        <span class="empty-icon" aria-hidden="true">📭</span>
+                        <h3>No Data Available</h3>
+                        <p>There are currently no items matching your criteria in this dataset.</p>
+                        <button type="button" id="reset-data-btn" class="action-btn primary-btn">Reload Initial Dataset</button>
+                    </article>
+                </section>
+
+                <!-- STATE 4: ERROR STATE WITH ACCESSIBLE RETRY -->
+                <section class="state-view view-error" role="alert" aria-label="Error state">
+                    <article class="error-box">
+                        <span class="error-icon" aria-hidden="true">⚠️</span>
+                        <h3>Failed to Load Data</h3>
+                        <p>A network communication timeout occurred while fetching remote resources.</p>
+                        <button type="button" id="retry-btn" class="action-btn retry-btn">
+                            <span class="retry-icon" aria-hidden="true">🔄</span>
+                            <span class="btn-text">Retry Connection</span>
+                        </button>
+                    </article>
+                </section>
+
+            </section>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <p>&copy; 2026 4-State Resilient Component Contract. Pure CSS Shimmer & State Machine Engine.</p>
+    </footer>
+
+    <script src="js/theme.js" defer></script>
+    <script src="js/state-engine.js" defer></script>
+</body>
+</html>
